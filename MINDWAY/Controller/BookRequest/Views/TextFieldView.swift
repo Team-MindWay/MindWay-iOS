@@ -32,15 +32,15 @@ class TextFieldView: UIView {
     }
     
     // MARK: - LifeCycles
-    init(title: String, placeholder: String) {
-        configureUI()
+    override init(frame: CGRect) {
+        super.init(frame: frame)
     }
     
     convenience init(title: String, placeholder: String) {
-        self.titleLabel.text = title
-        self.textField.placeholder = placeholder
+            self.init(frame: .zero)
+            self.titleLabel.text = title
+            self.textField.placeholder = placeholder
     }
-    
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

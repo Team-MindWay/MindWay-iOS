@@ -25,11 +25,11 @@ final class BookRequestViewController: BaseViewController {
         $0.alignment = .fill
     }
     
-//    private let bookTitleTextFieldView = TextFieldView(title: "책 제목", placeholder: "책 제목을 입력하세요")
-//
-//    private let writerTextFieldView = TextFieldView(title: "저자", placeholder: "저자를 입력하세요")
-//    
-//    private let linkTextFieldView = TextFieldView(title: "링크", placeholder: "YES24 링크를 첨부하세요")
+    private let bookTitleTextFieldView = TextFieldView(title: "책 제목", placeholder: "책 제목을 입력하세요")
+
+    private let writerTextFieldView = TextFieldView(title: "저자", placeholder: "저자를 입력하세요")
+
+    private let linkTextFieldView = TextFieldView(title: "링크", placeholder: "YES24 링크를 첨부하세요")
     
     
     
