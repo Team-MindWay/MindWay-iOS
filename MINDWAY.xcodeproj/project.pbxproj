@@ -23,6 +23,10 @@
 		844494D92A5950EE00AA6C14 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844494D82A5950EE00AA6C14 /* UILabel+Extension.swift */; };
 		844494DB2A59514E00AA6C14 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844494DA2A59514E00AA6C14 /* UITextField+Extension.swift */; };
 		8444954C2A5FA19900AA6C14 /* BookRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8444954B2A5FA19900AA6C14 /* BookRequestViewController.swift */; };
+		844495502A5FB9DA00AA6C14 /* MainLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8444954F2A5FB9DA00AA6C14 /* MainLabelView.swift */; };
+		844495522A5FC54100AA6C14 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844495512A5FC54000AA6C14 /* TextFieldView.swift */; };
+		844495542A5FD71200AA6C14 /* ApplyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844495532A5FD71200AA6C14 /* ApplyButton.swift */; };
+		844495562A5FD87800AA6C14 /* StatusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844495552A5FD87800AA6C14 /* StatusButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +46,10 @@
 		844494D82A5950EE00AA6C14 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		844494DA2A59514E00AA6C14 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		8444954B2A5FA19900AA6C14 /* BookRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRequestViewController.swift; sourceTree = "<group>"; };
+		8444954F2A5FB9DA00AA6C14 /* MainLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainLabelView.swift; sourceTree = "<group>"; };
+		844495512A5FC54000AA6C14 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
+		844495532A5FD71200AA6C14 /* ApplyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyButton.swift; sourceTree = "<group>"; };
+		844495552A5FD87800AA6C14 /* StatusButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,9 +154,29 @@
 		844495482A5FA13700AA6C14 /* BookRequest */ = {
 			isa = PBXGroup;
 			children = (
+				8444954D2A5FB88D00AA6C14 /* Models */,
+				8444954E2A5FB8AC00AA6C14 /* Views */,
 				8444954B2A5FA19900AA6C14 /* BookRequestViewController.swift */,
 			);
 			path = BookRequest;
+			sourceTree = "<group>";
+		};
+		8444954D2A5FB88D00AA6C14 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8444954E2A5FB8AC00AA6C14 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8444954F2A5FB9DA00AA6C14 /* MainLabelView.swift */,
+				844495512A5FC54000AA6C14 /* TextFieldView.swift */,
+				844495532A5FD71200AA6C14 /* ApplyButton.swift */,
+				844495552A5FD87800AA6C14 /* StatusButton.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,13 +261,17 @@
 				844494CE2A59428000AA6C14 /* UIColor+Extension.swift in Sources */,
 				07F28B852A4E7B090021B9E9 /* TabBarViewController.swift in Sources */,
 				07F28B6C2A4E708F0021B9E9 /* ViewController.swift in Sources */,
+				844495522A5FC54100AA6C14 /* TextFieldView.swift in Sources */,
 				8444954C2A5FA19900AA6C14 /* BookRequestViewController.swift in Sources */,
 				07F28B682A4E708F0021B9E9 /* AppDelegate.swift in Sources */,
 				07F28B6A2A4E708F0021B9E9 /* SceneDelegate.swift in Sources */,
+				844495502A5FB9DA00AA6C14 /* MainLabelView.swift in Sources */,
 				844494DB2A59514E00AA6C14 /* UITextField+Extension.swift in Sources */,
 				844494D72A59502600AA6C14 /* UIButton+Extension.swift in Sources */,
 				07F28B8F2A4EF8E10021B9E9 /* MINDWAYFont.swift in Sources */,
 				07F28B922A4EF98B0021B9E9 /* BaseViewController.swift in Sources */,
+				844495542A5FD71200AA6C14 /* ApplyButton.swift in Sources */,
+				844495562A5FD87800AA6C14 /* StatusButton.swift in Sources */,
 				844494D92A5950EE00AA6C14 /* UILabel+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
