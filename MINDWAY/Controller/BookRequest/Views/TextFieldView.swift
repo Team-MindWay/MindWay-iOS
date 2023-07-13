@@ -11,12 +11,19 @@ import Then
 
 class TextFieldView: UIView {
     // MARK: - Properties
-    private let titleLabel = UILabel().then {
+    lazy var stackView = UIStackView().then {
+        $0.spacing = 7
+        $0.axis = .vertical
+        $0.distribution = .fill
+        $0.alignment = .fill
+    }
+    
+    lazy var titleLabel = UILabel().then {
         $0.font = UIFont.appleSDGothicNeoFont(size: 16, family: .Regular)
         $0.textColor = .black
     }
 
-    private let textField = UITextField().then {
+    lazy var textField = UITextField().then {
         $0.textColor = .black
         $0.tintColor = .black
         $0.font = UIFont.appleSDGothicNeoFont(size: 12, family: .Regular)
@@ -54,20 +61,17 @@ class TextFieldView: UIView {
     
     // MARK: - addView
     private func addView() {
-        [titleLabel, textField].forEach { self.addSubview($0) }
+        self.addSubview(stackView)
+        
+        [titleLabel, textField].forEach {
+            self.stackView.addArrangedSubview($0)
+        }
     }
     
     // MARK: - Setting Layout
     private func setLayout() {
-        titleLabel.snp.makeConstraints {
+        stackView.snp.makeConstraints {
             $0.top.equalToSuperview()
-            $0.bottom.equalToSuperview().inset(-61)
-            $0.leading.equalToSuperview().inset(14)
-            $0.trailing.equalToSuperview().inset(-214)
-        }
-        
-        textField.snp.makeConstraints {
-            $0.top.equalTo(titleLabel.snp.bottom).offset(7)
             $0.bottom.equalToSuperview()
             $0.leading.equalToSuperview()
             $0.trailing.equalToSuperview()

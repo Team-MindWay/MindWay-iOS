@@ -63,8 +63,12 @@ final class BookRequestViewController: BaseViewController {
     
     // MARK: - Add View
     override func addView() {
-        [topLogoImage, processingBar, mainLabelView, guideText].forEach {
+        [topLogoImage, processingBar, mainLabelView, stackView].forEach {
             self.view.addSubview($0)
+        }
+        
+        [bookTitleTextFieldView, writerTextFieldView, linkTextFieldView].forEach {
+            self.stackView.addArrangedSubview($0)
         }
         
     }
@@ -74,8 +78,9 @@ final class BookRequestViewController: BaseViewController {
     override func setLayout() {
         topLogoImage.snp.makeConstraints {
             $0.top.equalTo(self.view.safeAreaLayoutGuide.snp.top)
-            $0.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom).offset(-648)
             $0.centerX.equalTo(self.view.snp.centerX)
+            $0.height.equalTo(70.48101)
+            $0.width.equalTo(48)
         }
         
         processingBar.snp.makeConstraints {
@@ -90,6 +95,14 @@ final class BookRequestViewController: BaseViewController {
             $0.centerX.equalToSuperview()
             $0.width.equalTo(75)
             $0.height.equalTo(38)
+        }
+        
+        stackView.snp.makeConstraints {
+            $0.top.equalTo(mainLabelView.snp.bottom).offset(77)
+            $0.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom).offset(-214)
+            $0.leading.equalTo(processingBar.snp.trailing).offset(23.02)
+            $0.trailing.equalTo(self.view.snp.trailing).offset(-53)
+            
         }
         
         
