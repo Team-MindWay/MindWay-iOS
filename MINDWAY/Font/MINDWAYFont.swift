@@ -11,6 +11,7 @@ extension UIFont {
     
     enum Family: String {
         case Light = "AppleSDGothicNeo-Light"
+        case Medium = "AppleSDGothicNeo-Medium"
         case Regular = "AppleSDGothicNeo-Regular"
         case Bold = "AppleSDGothicNeo-Bold"
     }

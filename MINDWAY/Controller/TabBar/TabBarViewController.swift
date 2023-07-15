@@ -18,9 +18,9 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
         let recommendVC = ViewController()
         let mainVC = ViewController()
         let bookApplyVC = ViewController()
-        let mypageVC = ViewController()
+        let mypageVC = MypageViewContoller()
         
-        tabBar.tintColor = UIColor(named: "green")
+        tabBar.tintColor = UIColor.green
         tabBar.backgroundColor = .white
         
         // set tabbar shadow
