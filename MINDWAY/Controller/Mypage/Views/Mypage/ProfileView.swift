@@ -18,9 +18,7 @@ class ProfileView: UIView {
     }
     
     required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        addView()
-        setLayout()
+        fatalError("init(coder:) has not been implemented")
     }
     
     let profileImage = UIImageView().then {

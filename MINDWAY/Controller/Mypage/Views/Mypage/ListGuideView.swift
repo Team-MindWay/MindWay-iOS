@@ -18,9 +18,7 @@ class ListGuideView: UIView {
     }
     
     required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        addView()
-        setLayout()
+        fatalError("init(coder:) has not been implemented")
     }
     
     let bookListLabel = UILabel().then {
