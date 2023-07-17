@@ -23,6 +23,9 @@ class ProfileView: UIView {
     
     let profileImage = UIImageView().then {
         $0.image = UIImage(named: "profile")
+        $0.layer.shadowOpacity = 0.25
+        $0.layer.shadowRadius = 5
+        $0.layer.shadowOffset = CGSize(width: 1, height: 2)
     }
     
     let classNumLabel = UILabel().then {

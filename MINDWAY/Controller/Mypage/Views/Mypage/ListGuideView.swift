@@ -47,11 +47,11 @@ class ListGuideView: UIView {
         }
         editLabel.snp.makeConstraints {
             $0.top.equalTo(bookListLabel.snp.top)
-            $0.leading.equalTo(bookListLabel.snp.trailing).offset(150)
+            $0.leading.equalTo(bookListLabel.snp.trailing).offset(140)
         }
         deleteLabel.snp.makeConstraints {
             $0.top.equalTo(bookListLabel.snp.top)
-            $0.leading.equalTo(editLabel.snp.trailing).offset(24)
+            $0.leading.equalTo(editLabel.snp.trailing).offset(28)
         }
     }
 }

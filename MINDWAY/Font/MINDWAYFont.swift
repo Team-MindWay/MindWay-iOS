@@ -14,6 +14,7 @@ extension UIFont {
         case Medium = "AppleSDGothicNeo-Medium"
         case Regular = "AppleSDGothicNeo-Regular"
         case Bold = "AppleSDGothicNeo-Bold"
+        case semiBold = "AppleSDGothicNeo-semiBold"
     }
     
     static func appleSDGothicNeoFont(size: CGFloat = 10, family: Family = .Regular) -> UIFont {

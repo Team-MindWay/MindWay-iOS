@@ -8,6 +8,7 @@
 import UIKit
 
 class TitleView: UIView {
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         addView()
@@ -15,9 +16,7 @@ class TitleView: UIView {
     }
     
     required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        addView()
-        setLayout()
+        fatalError("init(coder:) has not been implemented")
     }
     
     let subTitleLabel = UILabel().then {

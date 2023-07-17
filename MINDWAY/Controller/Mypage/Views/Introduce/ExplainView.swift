@@ -8,6 +8,7 @@
 import UIKit
 
 class ExplainView: UIView {
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         addView()
@@ -15,9 +16,7 @@ class ExplainView: UIView {
     }
     
     required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        addView()
-        setLayout()
+        fatalError("init(coder:) has not been implemented")
     }
     
     let backLogoImage = UIImageView().then {

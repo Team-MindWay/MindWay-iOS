@@ -15,6 +15,8 @@ class IntroduceViewController: BaseViewController {
     
     private let topGradationView = TopGradientView()
     
+    private let teamMember = TeamLabelView()
+    
     private let copyrightLabel = UILabel().then {
         $0.text = "© 2022. MINDWAY All rights reserved."
         $0.textColor = UIColor.gray
@@ -22,7 +24,7 @@ class IntroduceViewController: BaseViewController {
     }
     
     override func addView() {
-        [topLogoImage, titleView, explainView, topGradationView, copyrightLabel].forEach{view.addSubview($0)}
+        [topLogoImage, titleView, explainView, topGradationView, teamMember, copyrightLabel].forEach{view.addSubview($0)}
     }
     
     override func setLayout() {
@@ -41,9 +43,14 @@ class IntroduceViewController: BaseViewController {
             $0.centerX.equalToSuperview()
         }
         topGradationView.snp.makeConstraints {
-            $0.height.equalTo(15)
+            $0.height.equalTo(20)
             $0.top.equalTo(explainView.mainLabel.snp.bottom).offset(35)
             $0.leading.trailing.equalToSuperview().inset(33)
+        }
+        teamMember.snp.makeConstraints {
+            $0.top.equalTo(topGradationView.snp.bottom).offset(20)
+            $0.leading.equalToSuperview().offset(115)
+            //$0.leading.trailing.equalToSuperview().inset(99)
         }
         copyrightLabel.snp.makeConstraints {
             $0.bottom.equalToSuperview().inset(120)
