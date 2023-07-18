@@ -113,20 +113,33 @@ extension MypageViewContoller: UICollectionViewDelegate, UICollectionViewDataSou
             return UICollectionViewCell()
         }
         cell.backgroundColor = .white
+        let maxLabelLength = 18
         let historyItem = viewModel.data[indexPath.item]
         cell.bookName.text = historyItem.bookName
         cell.author.text = historyItem.author
+        
+        cell.bookName.bookReadMore(maxLength: maxLabelLength)
+        cell.author.bookReadMore(maxLength: maxLabelLength)
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let cellWidth = collectionView.bounds.width - 120
+        let cellWidth = collectionView.bounds.width - 60
         let cellHeight: CGFloat = 37
         return CGSize(width: cellWidth, height: cellHeight)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 15
+    }
+}
+
+extension UILabel {
+    func bookReadMore(maxLength: Int) {
+        if let text = self.text, text.count > maxLength {
+            let endIndex = text.index(text.startIndex, offsetBy: maxLength - 3)
+            self.text = String(text[..<endIndex]) + "..."
+        }
     }
 }
