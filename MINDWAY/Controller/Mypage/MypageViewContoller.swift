@@ -11,6 +11,8 @@ class MypageViewContoller: BaseViewController {
     
     private let viewModel = MypageViewModel()
     
+    var popupVC: PopupViewController?
+    
     private let logoutButton = UIButton().then {
         $0.setTitle("로그아웃", for: .normal)
         $0.setTitleColor(UIColor.red, for: .normal)
@@ -100,6 +102,25 @@ class MypageViewContoller: BaseViewController {
         let nextVC = IntroduceViewController()
         self.navigationController?.pushViewController(nextVC, animated: false)
     }
+    
+    @objc func deletePopup(_ sender: UIButton) {
+        let cellIndex = sender.tag
+        guard cellIndex < viewModel.data.count else {
+            return
+        }
+        let historyItem = viewModel.data[cellIndex]
+        
+        let popupVC = PopupViewController()
+        popupVC.boxInBookName = historyItem.bookName
+        popupVC.modalPresentationStyle = .overFullScreen
+        
+        popupVC.onDelete = { [weak self] bookNameToDelete in
+            self?.viewModel.deleteBook(withName: bookNameToDelete)
+            self?.historyCollectionView.reloadData()
+        }
+        
+        self.present(popupVC, animated: false)
+    }
 }
 
 extension MypageViewContoller: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -113,13 +134,16 @@ extension MypageViewContoller: UICollectionViewDelegate, UICollectionViewDataSou
             return UICollectionViewCell()
         }
         cell.backgroundColor = .white
-        let maxLabelLength = 18
+        let maxLabelLength = 17
         let historyItem = viewModel.data[indexPath.item]
         cell.bookName.text = historyItem.bookName
         cell.author.text = historyItem.author
         
         cell.bookName.bookReadMore(maxLength: maxLabelLength)
         cell.author.bookReadMore(maxLength: maxLabelLength)
+        
+        cell.deleteButton.tag = indexPath.item
+        cell.deleteButton.addTarget(self, action: #selector(deletePopup), for: .touchUpInside)
         
         return cell
     }
@@ -132,14 +156,5 @@ extension MypageViewContoller: UICollectionViewDelegate, UICollectionViewDataSou
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 15
-    }
-}
-
-extension UILabel {
-    func bookReadMore(maxLength: Int) {
-        if let text = self.text, text.count > maxLength {
-            let endIndex = text.index(text.startIndex, offsetBy: maxLength - 3)
-            self.text = String(text[..<endIndex]) + "..."
-        }
     }
 }

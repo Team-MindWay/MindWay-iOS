@@ -16,4 +16,8 @@ class MypageViewModel {
             BookApplyHistory(bookName: "여름은 오래 그곳에 남아", author: "마쓰이에 마사시"),
         ]
     }
+    
+    func deleteBook(withName bookName: String) {
+        data = data.filter { $0.bookName != bookName }
+    }
 }
