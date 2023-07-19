@@ -19,6 +19,7 @@
 		079E5B402A64CD8B001A0060 /* TeamLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079E5B3F2A64CD8B001A0060 /* TeamLabelView.swift */; };
 		079E5B4A2A6552AC001A0060 /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079E5B492A6552AC001A0060 /* PopupViewController.swift */; };
 		079E5B4C2A660AD4001A0060 /* PopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079E5B4B2A660AD4001A0060 /* PopupView.swift */; };
+		079E5B4E2A6787CC001A0060 /* NoButtonPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079E5B4D2A6787CC001A0060 /* NoButtonPopupView.swift */; };
 		07F28B682A4E708F0021B9E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F28B672A4E708F0021B9E9 /* AppDelegate.swift */; };
 		07F28B6A2A4E708F0021B9E9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F28B692A4E708F0021B9E9 /* SceneDelegate.swift */; };
 		07F28B6C2A4E708F0021B9E9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F28B6B2A4E708F0021B9E9 /* ViewController.swift */; };
@@ -51,6 +52,7 @@
 		079E5B3F2A64CD8B001A0060 /* TeamLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamLabelView.swift; sourceTree = "<group>"; };
 		079E5B492A6552AC001A0060 /* PopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
 		079E5B4B2A660AD4001A0060 /* PopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupView.swift; sourceTree = "<group>"; };
+		079E5B4D2A6787CC001A0060 /* NoButtonPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoButtonPopupView.swift; sourceTree = "<group>"; };
 		07F28B642A4E708F0021B9E9 /* MINDWAY.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MINDWAY.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07F28B672A4E708F0021B9E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		07F28B692A4E708F0021B9E9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 				079E5B2F2A6278B3001A0060 /* Mypage */,
 				079E5B302A6278D7001A0060 /* Introduce */,
 				079E5B4B2A660AD4001A0060 /* PopupView.swift */,
+				079E5B4D2A6787CC001A0060 /* NoButtonPopupView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 				844494CE2A59428000AA6C14 /* UIColor+Extension.swift in Sources */,
 				079E5B362A62858D001A0060 /* ExplainView.swift in Sources */,
 				079E5B402A64CD8B001A0060 /* TeamLabelView.swift in Sources */,
+				079E5B4E2A6787CC001A0060 /* NoButtonPopupView.swift in Sources */,
 				079E5B4A2A6552AC001A0060 /* PopupViewController.swift in Sources */,
 				079E5B3E2A62AEDD001A0060 /* MypageViewModel.swift in Sources */,
 				079E5B392A629480001A0060 /* HistoryCollectionViewCell.swift in Sources */,
