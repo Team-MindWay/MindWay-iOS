@@ -19,19 +19,23 @@ final class BookRequestViewController: BaseViewController {
     private let mainLabelView = MainLabelView()
     
     private lazy var stackView = UIStackView().then {
-        $0.spacing = 20
+        $0.spacing = 2
         $0.axis = .vertical
         $0.distribution = .fillEqually
         $0.alignment = .fill
     }
     
-    private let bookTitleTextFieldView = TextFieldView(title: "책 제목", placeholder: "책 제목을 입력하세요")
+    private let bookTitleTextFieldView = TextFieldView(title: "책 제목", placeholder: "책 제목을 입력하세요").then {
+        $0.textField.addTarget(self, action: #selector(textFieldEditingChaged(_:)), for: .editingChanged)
+    }
 
-    private let writerTextFieldView = TextFieldView(title: "저자", placeholder: "저자를 입력하세요")
+    private let writerTextFieldView = TextFieldView(title: "저자", placeholder: "저자를 입력하세요").then {
+        $0.textField.addTarget(self, action: #selector(textFieldEditingChaged(_:)), for: .editingChanged)
+    }
 
-    private let linkTextFieldView = TextFieldView(title: "링크", placeholder: "YES24 링크를 첨부하세요")
-    
-    
+    private let linkTextFieldView = TextFieldView(title: "링크", placeholder: "YES24 링크를 첨부하세요").then {
+        $0.textField.addTarget(self, action: #selector(textFieldEditingChaged(_:)), for: .editingChanged)
+    }
     
     private let applyButton = ApplyButton()
     
@@ -49,8 +53,13 @@ final class BookRequestViewController: BaseViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         configureUI()
+    }
+    
+    // MARK: Keyboard Down
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
     // MARK: - UI Configure
@@ -63,31 +72,29 @@ final class BookRequestViewController: BaseViewController {
     
     // MARK: - Add View
     override func addView() {
-        [topLogoImage, processingBar, mainLabelView, stackView].forEach {
+        [topLogoImage, processingBar, mainLabelView, stackView, applyButton, statusButton, guideText].forEach {
             self.view.addSubview($0)
         }
         
         [bookTitleTextFieldView, writerTextFieldView, linkTextFieldView].forEach {
             self.stackView.addArrangedSubview($0)
         }
-        
     }
-    
     
     // MARK: Layout Setting
     override func setLayout() {
         topLogoImage.snp.makeConstraints {
-            $0.top.equalTo(self.view.safeAreaLayoutGuide.snp.top)
-            $0.centerX.equalTo(self.view.snp.centerX)
-            $0.height.equalTo(70.48101)
             $0.width.equalTo(48)
+            $0.height.equalTo(70)
+            $0.top.equalToSuperview().inset(40)
+            $0.centerX.equalToSuperview()
         }
         
         processingBar.snp.makeConstraints {
-            $0.top.equalTo(self.view.safeAreaLayoutGuide)
-            $0.leading.equalTo(self.view.snp.leading).offset(33)
-            $0.trailing.equalTo(self.view.snp.trailing).offset(-347)
-            $0.height.equalTo(408)
+            $0.top.equalToSuperview().inset(40)
+            $0.bottom.equalToSuperview().inset(396)
+            $0.leading.equalToSuperview().inset(33)
+            $0.trailing.equalTo(topLogoImage.snp.leading).offset(-125.94)
         }
         
         mainLabelView.snp.makeConstraints {
@@ -99,43 +106,58 @@ final class BookRequestViewController: BaseViewController {
         
         stackView.snp.makeConstraints {
             $0.top.equalTo(mainLabelView.snp.bottom).offset(77)
-            $0.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom).offset(-214)
-            $0.leading.equalTo(processingBar.snp.trailing).offset(23.02)
-            $0.trailing.equalTo(self.view.snp.trailing).offset(-53)
-            
+            $0.bottom.equalToSuperview().inset(297)
+            $0.leading.equalToSuperview().inset(63)
+            $0.trailing.equalToSuperview().inset(53)
         }
         
+        applyButton.snp.makeConstraints {
+            $0.top.equalTo(self.stackView.snp.bottom).offset(36)
+            $0.trailing.equalToSuperview().inset(57)
+            $0.height.equalTo(29)
+            $0.width.equalTo(97)
+        }
         
+        statusButton.snp.makeConstraints {
+            $0.top.equalTo(self.applyButton.snp.bottom).offset(5)
+            $0.trailing.equalToSuperview().inset(84)
+            $0.width.equalTo(42)
+            $0.height.equalTo(14)
+        }
         
-        
-    }
-    
-
-}
-
-//MARK: - Preview
-
-#if DEBUG
-import SwiftUI
-struct ViewControllerRepresentable: UIViewControllerRepresentable {
-    
-func updateUIViewController(_ uiView: UIViewController,context: Context) {
-        // leave this empty
-}
-    @available(iOS 13.0.0, *)
-    func makeUIViewController(context: Context) -> UIViewController{
-        BookRequestViewController()
-    }
-}
-@available(iOS 13.0, *)
-struct ViewControllerRepresentable_PreviewProvider: PreviewProvider {
-    static var previews: some View {
-        Group {
-            ViewControllerRepresentable()
-                .ignoresSafeArea()
-                .previewDisplayName(/*@START_MENU_TOKEN@*/"Preview"/*@END_MENU_TOKEN@*/)
-                .previewDevice(PreviewDevice(rawValue: "iPhone 14 Pro"))
+        guideText.snp.makeConstraints {
+            $0.top.equalTo(self.stackView.snp.bottom).offset(171)
+            $0.height.equalTo(40)
+            $0.centerX.equalToSuperview()
         }
         
     }
-} #endif
+    
+    @objc func textFieldEditingChaged(_ textField : UITextField) {
+        if textField.text?.count == 1 {
+            if textField.text?.first == " " {
+                textField.text = ""
+                return
+            }
+        }
+        guard
+            let bookTitle = bookTitleTextFieldView.textField.text, !bookTitle.isEmpty,
+            let writer = writerTextFieldView.textField.text, !writer.isEmpty,
+            let link = linkTextFieldView.textField.text, !link.isEmpty
+        else {
+            applyButton.backgroundColor = .clear
+            applyButton.layer.borderColor = UIColor.lightGreen.cgColor
+            applyButton.setTitleColor(.green, for: .normal)
+            applyButton.isEnabled = false
+            return
+        }
+        
+        applyButton.backgroundColor = .green
+        applyButton.layer.borderColor = UIColor.green.cgColor
+        applyButton.setTitleColor(.white, for: .normal)
+        applyButton.isEnabled = true
+    }
+    
+}
+
+    

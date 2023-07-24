@@ -9,18 +9,30 @@ import UIKit
 import SnapKit
 import Then
 
-class ApplyButton: UIButton {
+final class ApplyButton: UIButton {
     
-    private let applyButton = UIButton().then {
-        $0.setTitle("신청하기", for: .normal)
-        $0.setTitleColor(UIColor(named: "green"), for: .normal)
-        $0.setTitleColor(UIColor.white, for: .selected)
-        $0.layer.cornerRadius = 15
-        $0.clipsToBounds = true
-        $0.titleLabel?.font = UIFont.appleSDGothicNeoFont(size: 10, family: .Regular)
-        $0.layer.borderWidth = 1
-        $0.layer.borderColor = UIColor.init(named: "lightGreen")!.cgColor
-        $0.backgroundColor = UIColor.white
+    // MARK: - LifeCycle
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        setButton()
+        self.isEnabled = false
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - Setting Button
+    func setButton() {
+        setTitle("신청하기", for: .normal)
+        setTitleColor(.green, for: .normal)
+        layer.cornerRadius = 15
+        clipsToBounds = true
+        titleLabel?.font = UIFont.appleSDGothicNeoFont(size: 10, family: .Regular)
+        backgroundColor = .clear
+        layer.borderWidth = 1
+        layer.borderColor = UIColor.lightGreen.cgColor
     }
     
 }

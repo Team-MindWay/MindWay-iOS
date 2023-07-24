@@ -14,5 +14,6 @@ extension UIColor {
     @nonobjc class var green: UIColor { return UIColor(named: "green")! }
     @nonobjc class var lightGreen: UIColor { return UIColor(named: "lightGreen")! }
     @nonobjc class var red: UIColor { return UIColor(named: "red")! }
+    @nonobjc class var whiteBackground: UIColor { return UIColor(named: "whiteBackground")! }
     
 }

@@ -9,13 +9,25 @@ import UIKit
 import SnapKit
 import Then
 
-class StatusButton: UIButton {
+final class StatusButton: UIButton {
     
-    private let statusButton = UIButton().then {
-        $0.setTitle("신청현황", for: .normal)
-        $0.backgroundColor = .clear
-        $0.titleLabel?.font = UIFont.appleSDGothicNeoFont(size: 12, family: .Regular)
-        $0.setTitleColor(UIColor(named: "green"), for: .normal)
-        $0.setUnderline()
+    // MARK: - LifeCycles
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        setButton()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - Setting Button
+    func setButton() {
+        setTitle("신청현황", for: .normal)
+        backgroundColor = .clear
+        titleLabel?.font = UIFont.appleSDGothicNeoFont(size: 12, family: .Regular)
+        setTitleColor(UIColor(named: "green"), for: .normal)
+        setUnderline()
     }
 }
