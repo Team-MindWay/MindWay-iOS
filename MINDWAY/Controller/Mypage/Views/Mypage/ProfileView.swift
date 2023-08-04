@@ -21,13 +21,6 @@ class ProfileView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    let profileImage = UIImageView().then {
-        $0.image = UIImage(named: "profile")
-        $0.layer.shadowOpacity = 0.25
-        $0.layer.shadowRadius = 5
-        $0.layer.shadowOffset = CGSize(width: 1, height: 2)
-    }
-    
     let classNumLabel = UILabel().then {
         $0.text = "3409"
         $0.font = UIFont.appleSDGothicNeoFont(size: 17, family: .Regular)
@@ -39,22 +32,17 @@ class ProfileView: UIView {
     }
     
     private func addView(){
-        [profileImage, classNumLabel, nameNumLabel].forEach { self.addSubview($0) }
+        [classNumLabel, nameNumLabel].forEach { self.addSubview($0) }
     }
     
     private func setLayout() {
-        profileImage.snp.makeConstraints {
-            $0.width.height.equalTo(127)
+        classNumLabel.snp.makeConstraints {
             $0.top.equalToSuperview()
             $0.centerX.equalToSuperview()
         }
-        classNumLabel.snp.makeConstraints {
-            $0.top.equalTo(profileImage.snp.bottom).offset(13)
-            $0.centerX.equalTo(profileImage)
-        }
         nameNumLabel.snp.makeConstraints {
             $0.top.equalTo(classNumLabel.snp.bottom).offset(5)
-            $0.centerX.equalTo(profileImage)
+            $0.centerX.equalToSuperview()
         }
     }
 }

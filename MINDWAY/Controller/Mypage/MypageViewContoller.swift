@@ -19,7 +19,14 @@ class MypageViewContoller: BaseViewController {
         $0.titleLabel?.font = UIFont.appleSDGothicNeoFont(size: 10, family: .Light)
     }
     
-    private let profileView = ProfileView()
+    let profileImage = UIImageView().then {
+        $0.image = UIImage(named: "profile")
+        $0.layer.shadowOpacity = 0.25
+        $0.layer.shadowRadius = 5
+        $0.layer.shadowOffset = CGSize(width: 1, height: 2)
+    }
+    
+    private let profileLabelView = ProfileView()
     
     private let listGuideView = ListGuideView()
     
@@ -54,27 +61,35 @@ class MypageViewContoller: BaseViewController {
     }
     
     override func addView() {
-        [topLogoImage, logoutButton, profileView, listGuideView, topGradationView, historyCollectionView, bottomGradationView, introduceButton].forEach{view.addSubview($0)}
+        [topLogoImage, logoutButton, profileImage, profileLabelView, listGuideView, topGradationView, historyCollectionView, bottomGradationView, introduceButton].forEach{view.addSubview($0)}
     }
     
     override func setLayout() {
         topLogoImage.snp.makeConstraints {
             $0.width.equalTo(48)
             $0.height.equalTo(70)
-            $0.top.equalToSuperview().inset(40)
+            $0.top.equalTo(self.view.safeAreaInsets).offset(self.view.bounds.height * 0.045)
             $0.centerX.equalToSuperview()
         }
         logoutButton.snp.makeConstraints {
-            $0.top.equalToSuperview().inset(84)
+            //$0.top.equalToSuperview().inset(84)
+            $0.top.equalTo(topLogoImage.snp.bottom).offset(-self.view.bounds.height * 0.035)
             $0.trailing.equalToSuperview().inset(33)
         }
-        profileView.snp.makeConstraints {
-            $0.top.equalTo(logoutButton.snp.bottom).offset(16)
+        profileImage.snp.makeConstraints {
+            $0.width.equalToSuperview().multipliedBy(0.32)
+            $0.height.equalTo(profileImage.snp.width)
+            $0.top.equalTo(logoutButton.snp.bottom).offset(self.view.bounds.height * 0.01)
             $0.centerX.equalToSuperview()
+        }
+        profileLabelView.snp.makeConstraints {
+            $0.top.equalTo(profileImage.snp.bottom).offset(13)
+            $0.centerX.equalToSuperview()
+            $0.width.equalTo(profileImage.snp.width).multipliedBy(0.01)
         }
         listGuideView.snp.makeConstraints {
             $0.height.equalTo(13)
-            $0.top.equalTo(profileView.nameNumLabel.snp.bottom).offset(26)
+            $0.top.equalTo(profileLabelView.nameNumLabel.snp.bottom).offset(26)
             $0.leading.trailing.equalToSuperview().inset(65)
         }
         topGradationView.snp.makeConstraints {
@@ -93,7 +108,8 @@ class MypageViewContoller: BaseViewController {
             $0.leading.trailing.equalToSuperview().inset(33)
         }
         introduceButton.snp.makeConstraints {
-            $0.bottom.equalToSuperview().inset(120)
+            //$0.bottom.equalToSuperview().inset(110)
+            $0.bottom.equalToSuperview().multipliedBy(0.87)
             $0.centerX.equalToSuperview()
         }
     }
