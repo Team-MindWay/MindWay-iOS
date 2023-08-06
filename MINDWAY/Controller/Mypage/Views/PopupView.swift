@@ -59,8 +59,11 @@ class PopupView: UIView {
     
     private func setLayout() {
         popupView.snp.makeConstraints {
-            $0.top.bottom.equalToSuperview().inset(346)
-            $0.leading.trailing.equalToSuperview().inset(43)
+            //$0.top.bottom.equalToSuperview().inset(346)
+            //$0.leading.trailing.equalToSuperview().inset(43)
+            $0.width.equalTo(304)
+            $0.height.equalTo(151)
+            $0.centerX.centerY.equalToSuperview()
         }
         titleLabel.snp.makeConstraints {
             $0.top.equalTo(popupView.snp.top).offset(33)
@@ -69,15 +72,15 @@ class PopupView: UIView {
         box.snp.makeConstraints {
             $0.top.equalTo(titleLabel.snp.bottom).offset(20)
             $0.leading.trailing.equalTo(popupView).inset(50)
-            $0.bottom.equalTo(popupView.snp.bottom).inset(60)
+            $0.bottom.equalTo(popupView.snp.bottom).inset(55)
         }
         cancelButton.snp.makeConstraints {
             $0.leading.equalTo(popupView.snp.leading).offset(56)
-            $0.bottom.equalTo(popupView.snp.bottom).inset(20)
+            $0.bottom.equalTo(popupView.snp.bottom).inset(15)
         }
         deleteButton.snp.makeConstraints {
             $0.trailing.equalTo(popupView.snp.trailing).inset(56)
-            $0.bottom.equalTo(popupView.snp.bottom).inset(20)
+            $0.bottom.equalTo(popupView.snp.bottom).inset(15)
         }
         selectBookLabel.snp.makeConstraints {
             $0.centerX.centerY.equalTo(box)
