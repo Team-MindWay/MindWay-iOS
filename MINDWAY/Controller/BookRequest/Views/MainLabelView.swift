@@ -10,6 +10,7 @@ import SnapKit
 import Then
 
 class MainLabelView: UIView {
+    
     // MARK: - Properties
     private let stackView = UIStackView().then {
         $0.spacing = 0

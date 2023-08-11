@@ -16,7 +16,6 @@ final class ApplyButton: UIButton {
         super.init(frame: frame)
         
         setButton()
-        self.isEnabled = false
     }
     
     required init?(coder: NSCoder) {
@@ -26,13 +25,19 @@ final class ApplyButton: UIButton {
     // MARK: - Setting Button
     func setButton() {
         setTitle("신청하기", for: .normal)
+        
         setTitleColor(.green, for: .normal)
+        setTitleColor(.white, for: .selected)
+        setTitleColor(.white, for: .highlighted)
+        
+        setBackgroundColor(.white, for: .normal)
+        setBackgroundColor(.green, for: .selected)
+        setBackgroundColor(.green, for: .highlighted)
+        
         layer.cornerRadius = 15
         clipsToBounds = true
         titleLabel?.font = UIFont.appleSDGothicNeoFont(size: 10, family: .Regular)
-        backgroundColor = .clear
         layer.borderWidth = 1
         layer.borderColor = UIColor.lightGreen.cgColor
     }
-    
 }

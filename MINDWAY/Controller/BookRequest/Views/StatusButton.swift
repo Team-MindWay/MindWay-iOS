@@ -27,7 +27,7 @@ final class StatusButton: UIButton {
         setTitle("신청현황", for: .normal)
         backgroundColor = .clear
         titleLabel?.font = UIFont.appleSDGothicNeoFont(size: 12, family: .Regular)
-        setTitleColor(UIColor(named: "green"), for: .normal)
+        setTitleColor(.green, for: .normal)
         setUnderline()
     }
 }

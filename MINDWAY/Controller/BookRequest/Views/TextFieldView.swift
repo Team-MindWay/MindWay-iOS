@@ -11,17 +11,17 @@ import Then
 
 final class TextFieldView: UIView {
     // MARK: - Properties
-    let titleLabel = UILabel().then {
+    private let titleLabel = UILabel().then {
         $0.font = UIFont.appleSDGothicNeoFont(size: 16, family: .Regular)
         $0.textColor = .black
     }
 
-    let textField = UITextField(frame: CGRect(x: 0, y: 0, width: 274, height: 54)).then {
+    lazy var textField = UITextField(frame: CGRect(x: 0, y: 0, width: 274, height: 54)).then {
         $0.textColor = .black
         $0.tintColor = .black
         $0.font = UIFont.appleSDGothicNeoFont(size: 12, family: .Regular)
         $0.layer.borderWidth = 1
-        $0.layer.borderColor = UIColor.init(named: "lightGreen")!.cgColor
+        $0.layer.borderColor = UIColor.lightGreen.cgColor
         $0.leftView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 14.0, height: 0.0))
         $0.leftViewMode = .always
         $0.layer.cornerRadius = 5
@@ -31,7 +31,7 @@ final class TextFieldView: UIView {
         $0.addShowshadow()
     }
     
-   let errorLabel = UILabel().then {
+    let errorLabel = UILabel().then {
         $0.textColor = .red
         $0.font = UIFont.appleSDGothicNeoFont(size: 10, family: .Regular)
         $0.isHidden = true
@@ -40,7 +40,7 @@ final class TextFieldView: UIView {
     // MARK: - LifeCycles
     override init(frame: CGRect) {
         super.init(frame: frame)
-        configureUI()
+        setup()
     }
     
     convenience init(title: String, placeholder: String) {
@@ -48,16 +48,16 @@ final class TextFieldView: UIView {
         self.titleLabel.text = title
         self.textField.placeholder = placeholder
         self.errorLabel.text = "\(title) 입력은 필수입니다."
-        
-        self.textField.delegate = self
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - UI Configure
-    private func configureUI() {
+    // MARK: - Setting
+    private func setup() {
+        self.textField.delegate = self
+        
         addView()
         setLayout()
     }
@@ -73,8 +73,9 @@ final class TextFieldView: UIView {
     private func setLayout() {
         titleLabel.snp.makeConstraints {
             $0.top.equalToSuperview()
-            $0.leading.equalToSuperview()
+            $0.leading.equalToSuperview().inset(13)
             $0.height.equalTo(19)
+            
         }
         
         textField.snp.makeConstraints {
@@ -90,17 +91,44 @@ final class TextFieldView: UIView {
             $0.trailing.equalToSuperview()
         }
     }
+    
+    func showError() -> Bool {
+        if self.textField.text == "" {
+            self.errorLabel.isHidden = false
+            self.textField.layer.borderColor = UIColor.red.cgColor
+            return true
+        } else {
+            self.errorLabel.isHidden = true
+            self.textField.layer.borderColor = UIColor.lightGreen.cgColor
+            return false
+        }
+    }
 
 }
-    
+
+// MARK: - Extension
 extension TextFieldView: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        self.textField.tintColor = .systemBlue
         return true
     }
     
-    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        textField.tintColor = .systemBlue
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if textField == self.textField {
+            self.textField.backgroundColor = .whiteBackground
+            self.textField.layer.borderColor = UIColor.green.cgColor
+        }
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField == self.textField {
+            self.textField.backgroundColor = .white
+            self.textField.layer.borderColor = UIColor.lightGreen.cgColor
+        }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.textField.resignFirstResponder()
         return true
     }
 }
