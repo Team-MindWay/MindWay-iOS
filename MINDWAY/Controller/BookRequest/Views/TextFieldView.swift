@@ -10,6 +10,7 @@ import SnapKit
 import Then
 
 final class TextFieldView: UIView {
+    
     // MARK: - Properties
     private let titleLabel = UILabel().then {
         $0.font = UIFont.appleSDGothicNeoFont(size: 16, family: .Regular)
@@ -47,6 +48,7 @@ final class TextFieldView: UIView {
         self.init(frame: .zero)
         self.titleLabel.text = title
         self.textField.placeholder = placeholder
+        self.textField.attributedPlaceholder = NSAttributedString(string: placeholder, attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray])
         self.errorLabel.text = "\(title) 입력은 필수입니다."
     }
     
@@ -69,7 +71,7 @@ final class TextFieldView: UIView {
         }
     }
     
-    // MARK: - Setting Layout
+    // MARK: - Layout
     private func setLayout() {
         titleLabel.snp.makeConstraints {
             $0.top.equalToSuperview()
@@ -92,21 +94,22 @@ final class TextFieldView: UIView {
         }
     }
     
+    // MARK: - show Error
     func showError() -> Bool {
-        if self.textField.text == "" {
-            self.errorLabel.isHidden = false
-            self.textField.layer.borderColor = UIColor.red.cgColor
-            return true
-        } else {
-            self.errorLabel.isHidden = true
-            self.textField.layer.borderColor = UIColor.lightGreen.cgColor
+        if let text = textField.text, !text.isEmpty {
+            errorLabel.isHidden = true
+            textField.layer.borderColor = UIColor.lightGreen.cgColor
             return false
+        } else {
+            errorLabel.isHidden = false
+            textField.layer.borderColor = UIColor.red.cgColor
+            return true
         }
     }
 
 }
 
-// MARK: - Extension
+// MARK: - UITexTieldDelegate Extension
 extension TextFieldView: UITextFieldDelegate {
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         self.textField.tintColor = .systemBlue

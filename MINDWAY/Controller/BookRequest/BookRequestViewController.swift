@@ -34,7 +34,7 @@ final class BookRequestViewController: BaseViewController {
     private let linkTextFieldView = TextFieldView(title: "링크", placeholder: "YES24 링크를 첨부하세요")
     
     private let applyButton = ApplyButton().then {
-        $0.addTarget(self, action: #selector(applayButtonTapped), for: .touchUpInside)
+        $0.addTarget(self, action: #selector(applyButtonTapped), for: .touchUpInside)
     }
     
     private let statusButton = StatusButton()
@@ -132,7 +132,8 @@ final class BookRequestViewController: BaseViewController {
         
     }
     
-    @objc func applayButtonTapped() {
+    // MARK: - Apply Button Tapped
+    @objc func applyButtonTapped() {
         var bookTitleError: Bool = false
         var writerError: Bool = false
         var linkError: Bool = false
