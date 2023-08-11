@@ -11,7 +11,7 @@ import Then
 
 final class ApplyButton: UIButton {
     
-    // MARK: - LifeCycles
+    // MARK: - LifeCycle
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -25,13 +25,15 @@ final class ApplyButton: UIButton {
     // MARK: - Setting Button
     func setButton() {
         setTitle("신청하기", for: .normal)
-        setTitleColor(UIColor(named: "green"), for: .normal)
-        setTitleColor(UIColor.white, for: .selected)
+        
+        setTitleColor(.green, for: .normal)
+        setTitleColor(.white, for: .selected)
+        setTitleColor(.white, for: .highlighted)
+        
         layer.cornerRadius = 15
         clipsToBounds = true
         titleLabel?.font = UIFont.appleSDGothicNeoFont(size: 10, family: .Regular)
         layer.borderWidth = 1
-        layer.borderColor = UIColor.init(named: "lightGreen")!.cgColor
-        backgroundColor = UIColor.white
+        layer.borderColor = UIColor.lightGreen.cgColor
     }
 }

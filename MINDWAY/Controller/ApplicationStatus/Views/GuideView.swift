@@ -10,6 +10,7 @@ import SnapKit
 import Then
 
 final class GuideView: UIView {
+    
     // MARK: - Properties
     let numberLabel = UILabel().then {
         $0.text = "순번"

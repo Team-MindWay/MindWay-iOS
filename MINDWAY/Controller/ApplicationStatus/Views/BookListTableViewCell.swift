@@ -12,24 +12,7 @@ import Then
 class BookListTableViewCell: UITableViewCell {
     
     // MARK: - Properties
-    static let BookListTableViewCellIdentifier = "bookListCell"
-    
-    var requestBook: Book?{
-        didSet{
-            guard var requestBook = requestBook else { return }
-            bookTitle.text = requestBook.bookTitle
-            writer.text = requestBook.writer
-        }
-    }
-    
-    lazy var stackView = UIStackView().then {
-        $0.spacing = 15
-        $0.axis = .vertical
-        $0.distribution = .fillEqually
-        $0.alignment = .fill
-    }
-    
-    let bookNumber = UILabel().then {
+    let bookNumberLabel = UILabel().then {
         $0.font = UIFont.appleSDGothicNeoFont(size: 15, family: .Regular)
         $0.textColor = .black
         $0.text = "1"
@@ -42,12 +25,12 @@ class BookListTableViewCell: UITableViewCell {
         $0.alignment = .fill
     }
     
-    let bookTitle = UILabel().then {
+    let bookTitleLabel = UILabel().then {
         $0.font = UIFont.appleSDGothicNeoFont(size: 15, family: .Regular)
         $0.textColor = .black
     }
     
-    let writer = UILabel().then {
+    let writerLabel = UILabel().then {
         $0.font = UIFont.appleSDGothicNeoFont(size: 12, family: .Regular)
         $0.textColor = .gray
     }
@@ -59,6 +42,7 @@ class BookListTableViewCell: UITableViewCell {
     // MARK: - LifeCycles
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
         configureUI()
     }
     
@@ -68,25 +52,46 @@ class BookListTableViewCell: UITableViewCell {
     
     // MARK: - Congigure UI
     func configureUI() {
+        backgroundColor = .white
+        
         addView()
         setLayout()
     }
     
     // MARK: - Add View
     func addView() {
-        self.addSubview(stackView)
-        
-        [bookTitle, writer].forEach { self.bookTitleAndWriterStacView.addArrangedSubview($0) }
-        [bookNumber, bookTitleAndWriterStacView, linkImage].forEach { self.stackView.addArrangedSubview($0) }
+        [bookTitleLabel, writerLabel].forEach { self.bookTitleAndWriterStacView.addArrangedSubview($0) }
+        [bookNumberLabel, bookTitleAndWriterStacView, linkImage].forEach { self.contentView.addSubview($0) }
     }
     
-    // MARK: - Setting Layout
+    // MARK: - Layout
     func setLayout() {
+        bookNumberLabel.snp.makeConstraints {
+            $0.top.equalTo(self.contentView.snp.top).offset(7)
+            $0.leading.equalTo(self.contentView.snp.leading)
+        }
         
-        stackView.snp.makeConstraints {
-            $0.top.bottom.leading.trailing.equalToSuperview()
+        bookTitleLabel.snp.makeConstraints {
+            $0.height.equalTo(18)
+        }
+        
+        writerLabel.snp.makeConstraints {
+            $0.height.equalTo(14)
+        }
+        
+        bookTitleAndWriterStacView.snp.makeConstraints {
+            $0.leading.equalTo(self.bookNumberLabel.snp.trailing).offset(17)
+            $0.top.equalTo(self.contentView.snp.top).offset(7)
+            $0.bottom.equalTo(self.contentView.snp.bottom)
+        }
+        
+        linkImage.snp.makeConstraints {
+            $0.top.equalTo(self.contentView.snp.top)
+            $0.trailing.equalTo(self.contentView.snp.trailing)
+            $0.height.width.equalTo(30)
         }
     }
     
-    
 }
+    
+

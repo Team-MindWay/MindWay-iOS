@@ -9,7 +9,8 @@ import UIKit
 import SnapKit
 import Then
 
-final class MainLabelView: UIView {
+class MainLabelView: UIView {
+    
     // MARK: - Properties
     private let stackView = UIStackView().then {
         $0.spacing = 0
@@ -23,7 +24,7 @@ final class MainLabelView: UIView {
         $0.font = UIFont.appleSDGothicNeoFont(size: 15, family: .Regular)
         $0.textColor = UIColor(named: "lightGreen")
     }
-
+    
     private let mainLabel = UILabel().then {
         $0.text = "도서 신청"
         $0.font = UIFont.appleSDGothicNeoFont(size: 20, family: .Bold)
