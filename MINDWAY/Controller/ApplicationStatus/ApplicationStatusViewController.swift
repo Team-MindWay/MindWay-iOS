@@ -18,7 +18,10 @@ final class ApplicationStatusViewController: BaseViewController {
     
     private let guideView = GuideView()
     
-    private let tableView = UITableView()
+    private let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()).then {
+        $0.isScrollEnabled = true
+        $0.backgroundColor = .systemPink
+    }
     
     var booksArray: [Book] = []
     
@@ -28,22 +31,22 @@ final class ApplicationStatusViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configureUI()
+        setup()
     }
     
-    // MARK: - UI Configure
-    func configureUI() {
+    // MARK: - Setting
+    func setup() {
         self.view.backgroundColor = .white
         
         addView()
         setLayout()
-        setupTableView()
+        setupCollectionView()
         setData()
     }
     
     // MARK: - Add View
     override func addView() {
-        [topLogoImage, mainLabelView, applyButton, guideView, tableView].forEach {
+        [topLogoImage, mainLabelView, applyButton, guideView, collectionView].forEach {
             self.view.addSubview($0)
         }
     }
@@ -78,26 +81,22 @@ final class ApplicationStatusViewController: BaseViewController {
             $0.height.equalTo(12)
         }
         
-        tableView.snp.makeConstraints {
-            $0.top.equalTo(self.guideView.snp.bottom)
-            $0.height.equalTo(394)
-            $0.centerX.equalToSuperview()
-            $0.leading.equalToSuperview().inset(64)
+        collectionView.snp.makeConstraints {
+            $0.top.equalTo(guideView.snp.bottom)
+            $0.leading.trailing.equalToSuperview().inset(33)
+            $0.bottom.equalTo(self.view.safeAreaLayoutGuide)
         }
     }
     
-    // MARK: - setupTableView
-    func setupTableView() {
-        tableView.dataSource = self
-        tableView.delegate = self
+    // MARK: - collectionView Setting
+    func setupCollectionView() {
+        collectionView.dataSource = self
+        collectionView.delegate = self
         
-        tableView.rowHeight = 44
-        tableView.separatorStyle = .none
-        
-        tableView.register(BookListTableViewCell.self, forCellReuseIdentifier: "BookListCell")
+        collectionView.register(BookCollectionViewCell.self, forCellWithReuseIdentifier: BookCollectionViewCell.identifier)
     }
     
-    // MARK: - setData
+    // MARK: - Data Setting
     func setData() {
         bookListManager.makeBookListData()
         booksArray = bookListManager.getBookList()
@@ -105,25 +104,36 @@ final class ApplicationStatusViewController: BaseViewController {
 }
 
 
-// MARK: - UITableView Extension
-extension ApplicationStatusViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+// MARK: - UICollectionVeiw dataSource Extension
+extension ApplicationStatusViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return booksArray.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "BookListCell", for: indexPath) as! BookListTableViewCell
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BookCollectionViewCell.identifier, for: indexPath) as! BookCollectionViewCell
         
+        cell.bookNumberLabel.text = String(booksArray[indexPath.row].bookId)
         cell.bookTitleLabel.text = booksArray[indexPath.row].bookTitle
         cell.writerLabel.text = booksArray[indexPath.row].bookWriter
         
         return cell
     }
-
 }
 
-extension ApplicationStatusViewController: UITableViewDelegate {
+// MARK: - UICollectionVeiw delegate Extension
+extension ApplicationStatusViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 262, height: 44)
+    }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 32, left: 0, bottom: 32, right: 0)
+    }
 }
+
+
+
+
 
 

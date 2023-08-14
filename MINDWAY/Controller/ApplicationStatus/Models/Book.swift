@@ -8,8 +8,20 @@
 import UIKit
 
 struct Book {
-//    let bookNumber: Int
-    let bookTitle: String
-    let bookWriter: String
+    
+    static var bookNumber: Int = 1
+    
+    let bookId: Int
+    var bookTitle: String?
+    var bookWriter: String?
 //    let link: URL
+    
+    init(bookTitle: String?, bookWriter: String?) {
+        self.bookId = Book.bookNumber
+        
+        self.bookTitle = bookTitle
+        self.bookWriter = bookWriter
+        
+        Book.bookNumber += 1
+    }
 }

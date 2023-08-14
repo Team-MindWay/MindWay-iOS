@@ -1,15 +1,17 @@
 //
-//  BookListTableViewCell.swift
+//  BookCollectionViewCell.swift
 //  MINDWAY
 //
-//  Created by 새미 on 2023/07/14.
+//  Created by 새미 on 2023/08/14.
 //
 
 import UIKit
 import SnapKit
 import Then
 
-class BookListTableViewCell: UITableViewCell {
+class BookCollectionViewCell: UICollectionViewCell {
+    
+    static let identifier = "BookCell"
     
     // MARK: - Properties
     let bookNumberLabel = UILabel().then {
@@ -40,8 +42,8 @@ class BookListTableViewCell: UITableViewCell {
     }
     
     // MARK: - LifeCycles
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         
         configureUI()
     }
@@ -91,7 +93,4 @@ class BookListTableViewCell: UITableViewCell {
             $0.height.width.equalTo(30)
         }
     }
-    
 }
-    
-
