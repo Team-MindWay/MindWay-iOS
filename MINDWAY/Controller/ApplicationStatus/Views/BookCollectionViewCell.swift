@@ -17,7 +17,6 @@ class BookCollectionViewCell: UICollectionViewCell {
     let bookNumberLabel = UILabel().then {
         $0.font = UIFont.appleSDGothicNeoFont(size: 15, family: .Regular)
         $0.textColor = .black
-        $0.text = "1"
     }
     
     lazy var bookTitleAndWriterStacView = UIStackView().then {

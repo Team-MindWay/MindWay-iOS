@@ -23,6 +23,8 @@
 		844494D92A5950EE00AA6C14 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844494D82A5950EE00AA6C14 /* UILabel+Extension.swift */; };
 		844494DB2A59514E00AA6C14 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844494DA2A59514E00AA6C14 /* UITextField+Extension.swift */; };
 		8457A8472A8A37550009150D /* BookCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8457A8462A8A37550009150D /* BookCollectionViewCell.swift */; };
+		8457A8502A8B7BB40009150D /* TopGradationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8457A84F2A8B7BB40009150D /* TopGradationView.swift */; };
+		8457A8522A8B7BC70009150D /* BottomGradationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8457A8512A8B7BC70009150D /* BottomGradationView.swift */; };
 		84BF29E52A60C93E001AE60F /* ApplicationStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BF29E42A60C93E001AE60F /* ApplicationStatusViewController.swift */; };
 		84BF29E72A60CA3C001AE60F /* MainLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BF29E62A60CA3C001AE60F /* MainLabelView.swift */; };
 		84BF29E92A60CAAA001AE60F /* ApplyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BF29E82A60CAAA001AE60F /* ApplyButton.swift */; };
@@ -48,6 +50,8 @@
 		844494D82A5950EE00AA6C14 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		844494DA2A59514E00AA6C14 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		8457A8462A8A37550009150D /* BookCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCollectionViewCell.swift; sourceTree = "<group>"; };
+		8457A84F2A8B7BB40009150D /* TopGradationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopGradationView.swift; sourceTree = "<group>"; };
+		8457A8512A8B7BC70009150D /* BottomGradationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomGradationView.swift; sourceTree = "<group>"; };
 		84BF29E42A60C93E001AE60F /* ApplicationStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationStatusViewController.swift; sourceTree = "<group>"; };
 		84BF29E62A60CA3C001AE60F /* MainLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainLabelView.swift; sourceTree = "<group>"; };
 		84BF29E82A60CAAA001AE60F /* ApplyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyButton.swift; sourceTree = "<group>"; };
@@ -172,6 +176,8 @@
 				84BF29E82A60CAAA001AE60F /* ApplyButton.swift */,
 				84BF29EA2A60CCF1001AE60F /* GuideView.swift */,
 				8457A8462A8A37550009150D /* BookCollectionViewCell.swift */,
+				8457A84F2A8B7BB40009150D /* TopGradationView.swift */,
+				8457A8512A8B7BC70009150D /* BottomGradationView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -276,8 +282,10 @@
 				844494DB2A59514E00AA6C14 /* UITextField+Extension.swift in Sources */,
 				844494D72A59502600AA6C14 /* UIButton+Extension.swift in Sources */,
 				07F28B8F2A4EF8E10021B9E9 /* MINDWAYFont.swift in Sources */,
+				8457A8502A8B7BB40009150D /* TopGradationView.swift in Sources */,
 				07F28B922A4EF98B0021B9E9 /* BaseViewController.swift in Sources */,
 				84BF29EB2A60CCF1001AE60F /* GuideView.swift in Sources */,
+				8457A8522A8B7BC70009150D /* BottomGradationView.swift in Sources */,
 				84BF29E92A60CAAA001AE60F /* ApplyButton.swift in Sources */,
 				84BF29F22A60DFE4001AE60F /* BookListManager.swift in Sources */,
 				844494D92A5950EE00AA6C14 /* UILabel+Extension.swift in Sources */,

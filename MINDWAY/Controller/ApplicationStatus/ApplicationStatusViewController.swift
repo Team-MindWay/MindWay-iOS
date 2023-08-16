@@ -18,10 +18,14 @@ final class ApplicationStatusViewController: BaseViewController {
     
     private let guideView = GuideView()
     
+    private let topGradationView = TopGradationView()
+    
     private let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()).then {
         $0.isScrollEnabled = true
-        $0.backgroundColor = .systemPink
+        $0.backgroundColor = .clear
     }
+    
+    private let bottomGradationView = BottomGradationView()
     
     var booksArray: [Book] = []
     
@@ -46,7 +50,7 @@ final class ApplicationStatusViewController: BaseViewController {
     
     // MARK: - Add View
     override func addView() {
-        [topLogoImage, mainLabelView, applyButton, guideView, collectionView].forEach {
+        [topLogoImage, mainLabelView, applyButton, guideView, topGradationView, collectionView, bottomGradationView].forEach {
             self.view.addSubview($0)
         }
     }
@@ -81,10 +85,23 @@ final class ApplicationStatusViewController: BaseViewController {
             $0.height.equalTo(12)
         }
         
-        collectionView.snp.makeConstraints {
-            $0.top.equalTo(guideView.snp.bottom)
+        topGradationView.snp.makeConstraints {
+            $0.height.equalTo(22)
             $0.leading.trailing.equalToSuperview().inset(33)
-            $0.bottom.equalTo(self.view.safeAreaLayoutGuide)
+            $0.top.equalTo(guideView.snp.bottom).offset(15)
+        }
+        
+        collectionView.snp.makeConstraints {
+            $0.top.equalTo(topGradationView.snp.bottom).offset(10)
+            $0.leading.trailing.equalToSuperview().inset(64)
+            $0.height.equalTo(394)
+//            $0.bottom.equalTo(bottomGradationView.snp.top).offset(-10)
+        }
+        
+        bottomGradationView.snp.makeConstraints {
+            $0.height.equalTo(22)
+            $0.top.equalTo(collectionView.snp.bottom).offset(10)
+            $0.leading.trailing.equalToSuperview().inset(33)
         }
     }
     
@@ -127,9 +144,10 @@ extension ApplicationStatusViewController: UICollectionViewDelegateFlowLayout {
         return CGSize(width: 262, height: 44)
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 32, left: 0, bottom: 32, right: 0)
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 15
     }
+
 }
 
 
