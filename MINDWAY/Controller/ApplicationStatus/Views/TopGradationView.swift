@@ -17,6 +17,7 @@ final class TopGradationView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        backgroundColor = .white
         setupView()
     }
     
@@ -30,10 +31,10 @@ final class TopGradationView: UIView {
     
     // MARK: - View Setting
     private func setupView() {
-        backgroundColor = .white
+        backgroundColor = .clear
         
         let colors: [CGColor] = [
-            UIColor.lightGray.cgColor,
+            UIColor.init(red: 0.92, green: 0.92, blue: 0.92, alpha: 1).cgColor,
             UIColor.white.cgColor
         ]
         

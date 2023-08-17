@@ -16,7 +16,7 @@ final class ApplicationStatusViewController: BaseViewController {
     
     private let applyButton = ApplyButton()
     
-    private let guideView = GuideView()
+    lazy var guideView = GuideView()
     
     private let topGradationView = TopGradationView()
     

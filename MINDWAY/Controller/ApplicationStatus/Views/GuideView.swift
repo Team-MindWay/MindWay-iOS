@@ -33,6 +33,7 @@ final class GuideView: UIView {
     // MARK: - LifeCycles
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
         configureUI()
     }
     
@@ -54,18 +55,18 @@ final class GuideView: UIView {
     // MARK: - Setting Layout
     private func setLayout() {
         numberLabel.snp.makeConstraints {
-            $0.top.bottom.leading.equalToSuperview()
+            $0.top.leading.equalToSuperview()
             $0.width.equalTo(18)
         }
         
         bookTitleAndWriterLabel.snp.makeConstraints {
-            $0.top.bottom.equalToSuperview()
+            $0.top.equalToSuperview()
             $0.leading.equalTo(numberLabel.snp.trailing).offset(10)
             $0.width.equalTo(58)
         }
         
         linkLabel.snp.makeConstraints {
-            $0.top.bottom.trailing.equalToSuperview()
+            $0.top.trailing.equalToSuperview()
             $0.leading.equalTo(bookTitleAndWriterLabel.snp.trailing).offset(157)
         }
     }

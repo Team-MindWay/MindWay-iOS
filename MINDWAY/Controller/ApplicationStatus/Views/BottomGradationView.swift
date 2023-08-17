@@ -34,7 +34,7 @@ final class BottomGradationView: UIView {
         
         let colors: [CGColor] = [
             UIColor.white.cgColor,
-            UIColor.lightGray.cgColor
+            UIColor.init(red: 0.92, green: 0.92, blue: 0.92, alpha: 1).cgColor
         ]
         
         gradientLayer.colors = colors
