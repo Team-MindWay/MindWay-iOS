@@ -58,10 +58,10 @@ final class ApplicationStatusViewController: BaseViewController {
     // MARK: - Layout Setting
     override func setLayout() {
         topLogoImage.snp.makeConstraints {
-            $0.top.equalTo(self.view.safeAreaLayoutGuide.snp.top)
-            $0.centerX.equalTo(self.view.snp.centerX)
-            $0.height.equalTo(70.48101)
             $0.width.equalTo(48)
+            $0.height.equalTo(70)
+            $0.top.equalToSuperview().inset(40)
+            $0.centerX.equalToSuperview()
         }
         
         mainLabelView.snp.makeConstraints {
