@@ -29,7 +29,7 @@ final class ApplyButton: UIButton {
         setTitleColor(.green, for: .normal)
         setTitleColor(.white, for: .selected)
         setTitleColor(.white, for: .highlighted)
-        
+    
         layer.cornerRadius = 15
         clipsToBounds = true
         titleLabel?.font = UIFont.appleSDGothicNeoFont(size: 10, family: .Regular)
