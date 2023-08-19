@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import Then
 
-class BookCollectionViewCell: UICollectionViewCell {
+final class BookCollectionViewCell: UICollectionViewCell {
     
     static let identifier = "BookCell"
     
