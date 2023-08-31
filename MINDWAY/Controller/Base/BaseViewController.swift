@@ -10,6 +10,7 @@ import Then
 import SnapKit
 
 class BaseViewController: UIViewController {
+    let bounds = UIScreen.main.bounds
     
     lazy var topLogoImage = UIImageView().then {
         $0.image = UIImage(named: "miniLogo")
