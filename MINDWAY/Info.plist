@@ -12,6 +12,8 @@
 	<string>AppleSDGothicNeo-Regular.ttf</string>
 	<key>Item 2</key>
 	<string>AppleSDGothicNeo-Light.ttf</string>
+	<key>Item 3</key>
+	<string>AppleSDGothicNeo-Medium.ttf</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
