@@ -25,8 +25,11 @@ class BaseViewController: UIViewController {
         configNavigation()
     }
     
+    func configNavigation(){
+        self.navigationItem.hidesBackButton = true
+    }
+    
     func addView(){}
     func setLayout(){}
     func addTarget(){}
-    func configNavigation(){}
 }
