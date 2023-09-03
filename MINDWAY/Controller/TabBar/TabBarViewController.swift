@@ -10,6 +10,7 @@ import UIKit
 class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
     
     let HEIGHT_TAB_BAR:CGFloat = 100
+    let TAB_BAR_HEIGHT_RATIO:CGFloat = 0.12
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,9 +19,9 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
         let recommendVC = ViewController()
         let mainVC = ViewController()
         let bookApplyVC = ViewController()
-        let mypageVC = ViewController()
+        let mypageVC = MypageViewContoller()
         
-        tabBar.tintColor = UIColor(named: "green")
+        tabBar.tintColor = UIColor.green
         tabBar.backgroundColor = .white
         
         // set tabbar shadow
@@ -45,9 +46,10 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        let tabBarHeight = self.view.frame.size.height * TAB_BAR_HEIGHT_RATIO
         var tabFrame = self.tabBar.frame
-        tabFrame.size.height = HEIGHT_TAB_BAR
-        tabFrame.origin.y = self.view.frame.size.height - HEIGHT_TAB_BAR
+        tabFrame.size.height = tabBarHeight
+        tabFrame.origin.y = self.view.frame.size.height - tabBarHeight
         self.tabBar.frame = tabFrame
     }
 }
