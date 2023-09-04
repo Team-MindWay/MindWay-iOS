@@ -19,4 +19,10 @@ extension UILabel {
         attributedText = attributeString
     }
     
+    func bookReadMore(maxLength: Int) {
+        if let text = self.text, text.count > maxLength {
+            let endIndex = text.index(text.startIndex, offsetBy: maxLength - 3)
+            self.text = String(text[..<endIndex]) + "..."
+        }
+    }
 }

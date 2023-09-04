@@ -9,7 +9,8 @@ import UIKit
 
 extension UIColor {
     
-    @nonobjc class var shadowGray: UIColor { return UIColor(named: "shadowGray")! }
+    @nonobjc class var shadowGray: UIColor { return UIColor(named: "shdowGray")! }
+    @nonobjc class var lightGray: UIColor { return UIColor(named: "lightGray")! }
     @nonobjc class var gray: UIColor { return UIColor(named: "gray")! }
     @nonobjc class var green: UIColor { return UIColor(named: "green")! }
     @nonobjc class var lightGreen: UIColor { return UIColor(named: "lightGreen")! }

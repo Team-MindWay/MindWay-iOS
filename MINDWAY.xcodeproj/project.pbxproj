@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07192D202A5F795B00F0CAD9 /* MypageViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07192D1F2A5F795B00F0CAD9 /* MypageViewContoller.swift */; };
+		079E5B2C2A6273ED001A0060 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079E5B2B2A6273ED001A0060 /* ProfileView.swift */; };
+		079E5B2E2A627412001A0060 /* ListGuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079E5B2D2A627412001A0060 /* ListGuideView.swift */; };
+		079E5B322A62813A001A0060 /* BottomGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079E5B312A62813A001A0060 /* BottomGradientView.swift */; };
+		079E5B342A628514001A0060 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079E5B332A628514001A0060 /* TitleView.swift */; };
+		079E5B362A62858D001A0060 /* ExplainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079E5B352A62858D001A0060 /* ExplainView.swift */; };
+		079E5B392A629480001A0060 /* HistoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079E5B382A629480001A0060 /* HistoryCollectionViewCell.swift */; };
+		079E5B3C2A62AC3F001A0060 /* BookApplyHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079E5B3B2A62AC3F001A0060 /* BookApplyHistory.swift */; };
+		079E5B3E2A62AEDD001A0060 /* MypageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079E5B3D2A62AEDD001A0060 /* MypageViewModel.swift */; };
+		079E5B402A64CD8B001A0060 /* TeamLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079E5B3F2A64CD8B001A0060 /* TeamLabelView.swift */; };
+		079E5B4A2A6552AC001A0060 /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079E5B492A6552AC001A0060 /* PopupViewController.swift */; };
+		079E5B4C2A660AD4001A0060 /* PopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079E5B4B2A660AD4001A0060 /* PopupView.swift */; };
+		079E5B4E2A6787CC001A0060 /* NoButtonPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079E5B4D2A6787CC001A0060 /* NoButtonPopupView.swift */; };
 		07F28B682A4E708F0021B9E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F28B672A4E708F0021B9E9 /* AppDelegate.swift */; };
 		07F28B6A2A4E708F0021B9E9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F28B692A4E708F0021B9E9 /* SceneDelegate.swift */; };
 		07F28B6C2A4E708F0021B9E9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F28B6B2A4E708F0021B9E9 /* ViewController.swift */; };
@@ -18,6 +31,8 @@
 		07F28B8D2A4EF7530021B9E9 /* AppleSDGothicNeo.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 07F28B8C2A4EF7530021B9E9 /* AppleSDGothicNeo.ttc */; };
 		07F28B8F2A4EF8E10021B9E9 /* MINDWAYFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F28B8E2A4EF8E10021B9E9 /* MINDWAYFont.swift */; };
 		07F28B922A4EF98B0021B9E9 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F28B912A4EF98B0021B9E9 /* BaseViewController.swift */; };
+		07FC9AE52A5F962100D648AA /* IntroduceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FC9AE42A5F962100D648AA /* IntroduceViewController.swift */; };
+		07FC9AEA2A5FCF1800D648AA /* TopGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FC9AE92A5FCF1800D648AA /* TopGradientView.swift */; };
 		844494CE2A59428000AA6C14 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844494CD2A59428000AA6C14 /* UIColor+Extension.swift */; };
 		844494D72A59502600AA6C14 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844494D62A59502600AA6C14 /* UIButton+Extension.swift */; };
 		844494D92A5950EE00AA6C14 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844494D82A5950EE00AA6C14 /* UILabel+Extension.swift */; };
@@ -34,6 +49,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		07192D1F2A5F795B00F0CAD9 /* MypageViewContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageViewContoller.swift; sourceTree = "<group>"; };
+		079E5B2B2A6273ED001A0060 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		079E5B2D2A627412001A0060 /* ListGuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListGuideView.swift; sourceTree = "<group>"; };
+		079E5B312A62813A001A0060 /* BottomGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomGradientView.swift; sourceTree = "<group>"; };
+		079E5B332A628514001A0060 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
+		079E5B352A62858D001A0060 /* ExplainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplainView.swift; sourceTree = "<group>"; };
+		079E5B382A629480001A0060 /* HistoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		079E5B3B2A62AC3F001A0060 /* BookApplyHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookApplyHistory.swift; sourceTree = "<group>"; };
+		079E5B3D2A62AEDD001A0060 /* MypageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageViewModel.swift; sourceTree = "<group>"; };
+		079E5B3F2A64CD8B001A0060 /* TeamLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamLabelView.swift; sourceTree = "<group>"; };
+		079E5B492A6552AC001A0060 /* PopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
+		079E5B4B2A660AD4001A0060 /* PopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupView.swift; sourceTree = "<group>"; };
+		079E5B4D2A6787CC001A0060 /* NoButtonPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoButtonPopupView.swift; sourceTree = "<group>"; };
 		07F28B642A4E708F0021B9E9 /* MINDWAY.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MINDWAY.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07F28B672A4E708F0021B9E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		07F28B692A4E708F0021B9E9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +73,8 @@
 		07F28B8C2A4EF7530021B9E9 /* AppleSDGothicNeo.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppleSDGothicNeo.ttc; sourceTree = "<group>"; };
 		07F28B8E2A4EF8E10021B9E9 /* MINDWAYFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MINDWAYFont.swift; sourceTree = "<group>"; };
 		07F28B912A4EF98B0021B9E9 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		07FC9AE42A5F962100D648AA /* IntroduceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroduceViewController.swift; sourceTree = "<group>"; };
+		07FC9AE92A5FCF1800D648AA /* TopGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopGradientView.swift; sourceTree = "<group>"; };
 		844494CD2A59428000AA6C14 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		844494D62A59502600AA6C14 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		844494D82A5950EE00AA6C14 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
@@ -73,6 +103,55 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		07192D1E2A5F794B00F0CAD9 /* Mypage */ = {
+			isa = PBXGroup;
+			children = (
+				07192D1F2A5F795B00F0CAD9 /* MypageViewContoller.swift */,
+				07FC9AE42A5F962100D648AA /* IntroduceViewController.swift */,
+				07FC9AE62A5FC5F800D648AA /* Views */,
+				079E5B3A2A62A954001A0060 /* Model */,
+				079E5B372A628DBC001A0060 /* Cell */,
+				079E5B492A6552AC001A0060 /* PopupViewController.swift */,
+			);
+			path = Mypage;
+			sourceTree = "<group>";
+		};
+		079E5B2F2A6278B3001A0060 /* Mypage */ = {
+			isa = PBXGroup;
+			children = (
+				079E5B2B2A6273ED001A0060 /* ProfileView.swift */,
+				079E5B2D2A627412001A0060 /* ListGuideView.swift */,
+			);
+			path = Mypage;
+			sourceTree = "<group>";
+		};
+		079E5B302A6278D7001A0060 /* Introduce */ = {
+			isa = PBXGroup;
+			children = (
+				079E5B332A628514001A0060 /* TitleView.swift */,
+				079E5B352A62858D001A0060 /* ExplainView.swift */,
+				079E5B3F2A64CD8B001A0060 /* TeamLabelView.swift */,
+			);
+			path = Introduce;
+			sourceTree = "<group>";
+		};
+		079E5B372A628DBC001A0060 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				079E5B382A629480001A0060 /* HistoryCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		079E5B3A2A62A954001A0060 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				079E5B3B2A62AC3F001A0060 /* BookApplyHistory.swift */,
+				079E5B3D2A62AEDD001A0060 /* MypageViewModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		07F28B5B2A4E708F0021B9E9 = {
 			isa = PBXGroup;
 			children = (
@@ -116,7 +195,11 @@
 			isa = PBXGroup;
 			children = (
 				07F28B6B2A4E708F0021B9E9 /* ViewController.swift */,
+<<<<<<< HEAD
 				84BF29E22A60C8E1001AE60F /* ApplicationStatus */,
+=======
+				07192D1E2A5F794B00F0CAD9 /* Mypage */,
+>>>>>>> origin/develop
 				07F28B932A4EFF4D0021B9E9 /* TabBar */,
 				07F28B902A4EF9780021B9E9 /* Base */,
 			);
@@ -146,6 +229,19 @@
 				07F28B842A4E7B090021B9E9 /* TabBarViewController.swift */,
 			);
 			path = TabBar;
+			sourceTree = "<group>";
+		};
+		07FC9AE62A5FC5F800D648AA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				07FC9AE92A5FCF1800D648AA /* TopGradientView.swift */,
+				079E5B312A62813A001A0060 /* BottomGradientView.swift */,
+				079E5B2F2A6278B3001A0060 /* Mypage */,
+				079E5B302A6278D7001A0060 /* Introduce */,
+				079E5B4B2A660AD4001A0060 /* PopupView.swift */,
+				079E5B4D2A6787CC001A0060 /* NoButtonPopupView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		844494CC2A59423D00AA6C14 /* Extension */ = {
@@ -270,25 +366,50 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+<<<<<<< HEAD
 				84BF29F02A60DFCF001AE60F /* Book.swift in Sources */,
+=======
+				07FC9AE52A5F962100D648AA /* IntroduceViewController.swift in Sources */,
+>>>>>>> origin/develop
 				844494CE2A59428000AA6C14 /* UIColor+Extension.swift in Sources */,
+				079E5B362A62858D001A0060 /* ExplainView.swift in Sources */,
+				079E5B402A64CD8B001A0060 /* TeamLabelView.swift in Sources */,
+				079E5B4E2A6787CC001A0060 /* NoButtonPopupView.swift in Sources */,
+				079E5B4A2A6552AC001A0060 /* PopupViewController.swift in Sources */,
+				079E5B3E2A62AEDD001A0060 /* MypageViewModel.swift in Sources */,
+				079E5B392A629480001A0060 /* HistoryCollectionViewCell.swift in Sources */,
 				07F28B852A4E7B090021B9E9 /* TabBarViewController.swift in Sources */,
+<<<<<<< HEAD
 				8457A8472A8A37550009150D /* BookCollectionViewCell.swift in Sources */,
 				07F28B6C2A4E708F0021B9E9 /* ViewController.swift in Sources */,
 				84BF29E52A60C93E001AE60F /* ApplicationStatusViewController.swift in Sources */,
+=======
+				079E5B2E2A627412001A0060 /* ListGuideView.swift in Sources */,
+				079E5B4C2A660AD4001A0060 /* PopupView.swift in Sources */,
+				07F28B6C2A4E708F0021B9E9 /* ViewController.swift in Sources */,
+				079E5B342A628514001A0060 /* TitleView.swift in Sources */,
+>>>>>>> origin/develop
 				07F28B682A4E708F0021B9E9 /* AppDelegate.swift in Sources */,
 				07F28B6A2A4E708F0021B9E9 /* SceneDelegate.swift in Sources */,
 				84BF29E72A60CA3C001AE60F /* MainLabelView.swift in Sources */,
 				844494DB2A59514E00AA6C14 /* UITextField+Extension.swift in Sources */,
+				079E5B2C2A6273ED001A0060 /* ProfileView.swift in Sources */,
+				07FC9AEA2A5FCF1800D648AA /* TopGradientView.swift in Sources */,
+				079E5B322A62813A001A0060 /* BottomGradientView.swift in Sources */,
 				844494D72A59502600AA6C14 /* UIButton+Extension.swift in Sources */,
 				07F28B8F2A4EF8E10021B9E9 /* MINDWAYFont.swift in Sources */,
+<<<<<<< HEAD
 				8457A8502A8B7BB40009150D /* TopGradationView.swift in Sources */,
+=======
+				079E5B3C2A62AC3F001A0060 /* BookApplyHistory.swift in Sources */,
+>>>>>>> origin/develop
 				07F28B922A4EF98B0021B9E9 /* BaseViewController.swift in Sources */,
 				84BF29EB2A60CCF1001AE60F /* GuideView.swift in Sources */,
 				8457A8522A8B7BC70009150D /* BottomGradationView.swift in Sources */,
 				84BF29E92A60CAAA001AE60F /* ApplyButton.swift in Sources */,
 				84BF29F22A60DFE4001AE60F /* BookListManager.swift in Sources */,
 				844494D92A5950EE00AA6C14 /* UILabel+Extension.swift in Sources */,
+				07192D202A5F795B00F0CAD9 /* MypageViewContoller.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
