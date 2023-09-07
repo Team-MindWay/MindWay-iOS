@@ -14,7 +14,7 @@ extension UITextField {
         self.clipsToBounds = false
         self.layer.borderWidth = 1
         self.layer.shadowOpacity = 0.25
-        self.layer.shadowColor = UIColor.shadowGray.cgColor
+        self.layer.shadowColor = UIColor.gray.cgColor
         self.layer.shadowRadius = 1.5
         self.layer.shadowOffset = CGSize(width: 1, height: 2)
     }

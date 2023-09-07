@@ -129,7 +129,6 @@ final class BookRequestViewController: BaseViewController {
             $0.centerX.equalToSuperview()
             $0.width.equalTo(288)
         }
-        
     }
     
     // MARK: - Apply Button Tapped

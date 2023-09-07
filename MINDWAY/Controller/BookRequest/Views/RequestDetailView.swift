@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import Then
 
-final class PopupView: UIView {
+final class RequestDetailView: UIView {
     
     // MARK: - Properties
     private let popupView = UIView().then {
@@ -30,7 +30,7 @@ final class PopupView: UIView {
         $0.clipsToBounds = true
     }
     
-    lazy var bookTitle = UILabel().then {
+    var bookTitle = UILabel().then {
         $0.textColor = .black
         $0.font = UIFont.appleSDGothicNeoFont(size:10, family: .Regular)
     }

@@ -12,7 +12,7 @@ final class RequestResultViewController: BaseViewController {
     // MARK: - Properties
     var bookTitle: String?
     
-    let popupView = PopupView()
+    let popupView = RequestDetailView()
     
     // MARK: - Lifecycle
     override func viewDidLoad() {

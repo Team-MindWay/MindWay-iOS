@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import Then
 
-class MainLabelView: UIView {
+final class MainLabelView: UIView {
     
     // MARK: - Properties
     private let stackView = UIStackView().then {
