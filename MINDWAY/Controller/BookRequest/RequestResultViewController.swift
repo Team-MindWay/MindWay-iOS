@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class PopupViewController: BaseViewController {
+final class RequestResultViewController: BaseViewController {
 
     // MARK: - Properties
     var bookTitle: String?

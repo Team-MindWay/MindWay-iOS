@@ -12,7 +12,7 @@ import Then
 final class BookRequestViewController: BaseViewController {
     
     // MARK: - Properties
-    var popupVC = PopupViewController()
+    var popupVC = RequestResultViewController()
     
     private let processingBar = UIImageView().then {
         $0.image = UIImage(named: "processingBar")
@@ -55,7 +55,7 @@ final class BookRequestViewController: BaseViewController {
         configureUI()
     }
     
-    // MARK: Keyboard Down
+    // MARK: touchesBegan
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
@@ -143,7 +143,6 @@ final class BookRequestViewController: BaseViewController {
         linkError = linkTextFieldView.showError()
 
         if !bookTitleError && !writerError && !linkError {
-            let popupVC = PopupViewController()
             popupVC.modalPresentationStyle = .overFullScreen
             popupVC.bookTitle = bookTitleTextFieldView.textField.text
             self.present(popupVC, animated: false)
