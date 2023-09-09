@@ -195,11 +195,8 @@
 			isa = PBXGroup;
 			children = (
 				07F28B6B2A4E708F0021B9E9 /* ViewController.swift */,
-<<<<<<< HEAD
 				84BF29E22A60C8E1001AE60F /* ApplicationStatus */,
-=======
 				07192D1E2A5F794B00F0CAD9 /* Mypage */,
->>>>>>> origin/develop
 				07F28B932A4EFF4D0021B9E9 /* TabBar */,
 				07F28B902A4EF9780021B9E9 /* Base */,
 			);
@@ -366,11 +363,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-<<<<<<< HEAD
 				84BF29F02A60DFCF001AE60F /* Book.swift in Sources */,
-=======
 				07FC9AE52A5F962100D648AA /* IntroduceViewController.swift in Sources */,
->>>>>>> origin/develop
 				844494CE2A59428000AA6C14 /* UIColor+Extension.swift in Sources */,
 				079E5B362A62858D001A0060 /* ExplainView.swift in Sources */,
 				079E5B402A64CD8B001A0060 /* TeamLabelView.swift in Sources */,
@@ -379,16 +373,13 @@
 				079E5B3E2A62AEDD001A0060 /* MypageViewModel.swift in Sources */,
 				079E5B392A629480001A0060 /* HistoryCollectionViewCell.swift in Sources */,
 				07F28B852A4E7B090021B9E9 /* TabBarViewController.swift in Sources */,
-<<<<<<< HEAD
 				8457A8472A8A37550009150D /* BookCollectionViewCell.swift in Sources */,
 				07F28B6C2A4E708F0021B9E9 /* ViewController.swift in Sources */,
 				84BF29E52A60C93E001AE60F /* ApplicationStatusViewController.swift in Sources */,
-=======
 				079E5B2E2A627412001A0060 /* ListGuideView.swift in Sources */,
 				079E5B4C2A660AD4001A0060 /* PopupView.swift in Sources */,
 				07F28B6C2A4E708F0021B9E9 /* ViewController.swift in Sources */,
 				079E5B342A628514001A0060 /* TitleView.swift in Sources */,
->>>>>>> origin/develop
 				07F28B682A4E708F0021B9E9 /* AppDelegate.swift in Sources */,
 				07F28B6A2A4E708F0021B9E9 /* SceneDelegate.swift in Sources */,
 				84BF29E72A60CA3C001AE60F /* MainLabelView.swift in Sources */,
@@ -398,11 +389,8 @@
 				079E5B322A62813A001A0060 /* BottomGradientView.swift in Sources */,
 				844494D72A59502600AA6C14 /* UIButton+Extension.swift in Sources */,
 				07F28B8F2A4EF8E10021B9E9 /* MINDWAYFont.swift in Sources */,
-<<<<<<< HEAD
 				8457A8502A8B7BB40009150D /* TopGradationView.swift in Sources */,
-=======
 				079E5B3C2A62AC3F001A0060 /* BookApplyHistory.swift in Sources */,
->>>>>>> origin/develop
 				07F28B922A4EF98B0021B9E9 /* BaseViewController.swift in Sources */,
 				84BF29EB2A60CCF1001AE60F /* GuideView.swift in Sources */,
 				8457A8522A8B7BC70009150D /* BottomGradationView.swift in Sources */,
