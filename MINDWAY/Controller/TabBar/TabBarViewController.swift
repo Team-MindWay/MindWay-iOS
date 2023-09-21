@@ -21,6 +21,7 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
         let bookApplyVC = ViewController()
         let mypageVC = MypageViewContoller()
         let applicationStatusVC = ApplicationStatusViewController()
+        let bookRequestVC = BookRequestViewController()
         
         tabBar.tintColor = UIColor.green
         tabBar.backgroundColor = .white

@@ -18,11 +18,12 @@ extension UILabel {
         attributeString.addAttribute(.paragraphStyle, value: style, range: NSRange(location: 0, length: attributeString.length))
         attributedText = attributeString
     }
-    
+
     func bookReadMore(maxLength: Int) {
         if let text = self.text, text.count > maxLength {
             let endIndex = text.index(text.startIndex, offsetBy: maxLength - 3)
             self.text = String(text[..<endIndex]) + "..."
         }
     }
+
 }
